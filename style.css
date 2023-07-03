@@ -1,0 +1,337 @@
+
+body {
+  text-align: center;
+  background-color: rgb(221, 205, 182);
+}
+
+.container {
+  
+  margin-left: 500%;
+  display: flex;
+  
+}
+
+#progress-bar {
+  margin-top: 10px;
+  border: 2px solid #5a5a5a;
+  border-radius: 20px;
+  
+  width: 50%;
+  height: 40px;
+  position: relative;
+  background-color: #ffffff;
+  
+  margin-left: 10px;
+  overflow: hidden;
+}
+
+#progress-fill {
+  width: 0;
+  height: 100%;
+  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  transition: width 0.5s ease;
+  vertical-align: middle;
+  background-color: #00aaff;
+}
+
+#counter {
+  
+  margin-top: 10px;
+  margin-left: 20px;
+  font-family: Arial, sans-serif;
+  font-style: bold;
+  font-size: 30px;
+}
+
+span {
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.hidden {
+  display: none;
+}
+
+#popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.popup-content p {
+  font-size: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#okButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}
+
+#okButton:hover {
+  background-color: #45a049;
+}
+
+.container_2 {
+  position: absolute;
+  display: flex;
+  overflow:hidden;
+  border: none;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  transition: all 0.5s ease;
+}
+
+.left-side,
+.right-side {
+  padding: 30px;
+}
+
+.left-side {
+  position: absolute;
+  
+  top: 0;
+  left: 0;
+  width: 200px; /* Adjust the width as per your requirement */
+  height: 95%;
+  z-index: 1;
+  
+  background-color: rgb(185, 184, 167);
+  transition: transform 0.3s;
+}
+
+.right-side {
+  
+  flex: 1;
+  margin-left: 250px;
+  width: 200px; /* Adjust the width as per your requirement */
+  height: 95%;
+  background-color: rgb(248, 244, 227);
+  transition: margin-left 0.3s;
+}
+
+#editor-container {
+  
+  
+  height: 77vh;
+  margin: auto;
+  margin-top: 30px auto;
+  background-color: rgb(248, 244, 227);
+  font-size: 30px;
+  border: 5px solid #5a5a5a;
+  border-left-style: initial;
+  border-right-style: inherit;
+}
+
+#editor {
+  margin-top: 20px;
+  width: 50%;
+  height: 77vh;
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px solid #bebdbd;
+}
+
+#toolbar {
+  
+  
+}
+
+.ql-editor {
+  background-color: rgb(245, 240, 221);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 20px;
+  color:black;
+  text-align: left;
+}
+
+.ql-toolbar {
+  
+  margin: auto;
+  margin-top: 30px auto;
+  background-color: rgb(248, 244, 227);
+  font-size: 30px;
+ 
+}
+
+.ql-toolbar .ql-formats .ql-picker-label,
+.ql-toolbar .ql-formats .ql-picker-options {
+  padding: 1px;
+  tab-size: 20px;
+  font-size: 16px;
+}
+
+.ql-titleCase::before {
+  content: 'Tc';
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.ql-toolbar .ql-titleCase:hover {
+  background-color: #f1f1f1;
+}
+
+.ql-toolbar .ql-titleCase:active {
+  background-color: #e1e1e1;
+}
+
+#custom-button {
+  width: 120px;
+  margin-top: 15px;
+  margin-right: 5px;
+  height: 100%;
+  background-color: rgb(248, 244, 227);
+  border-radius: 5px;
+  border: 1px solid #5a5a5a;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+#custom-button:active {
+  background-color: #e1e1e1;
+}
+
+#custom-button:hover {
+  background-color: #f1f1f1;
+}
+
+/* New CSS for burger menu */
+
+
+
+.burger-menu {
+  
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: transform 0.5s ease;
+}
+
+.burger-menu {
+  position: absolute;
+  top: 10px;
+  right: 10px; /* Adjust the positioning as per your preference */
+  width: 30px;
+  height: 30px;
+  background-color: transparent; /* Adjust the background color of the burger menu icon */
+  cursor: pointer;
+  z-index: 2;
+}
+
+.burger-menu .bar {
+  width: 100%;
+  height: 4px;
+  background-color: rgb(248, 244, 227);
+  margin-bottom: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.container_2.active .left-side {
+  transform: translateX(-100%);
+}
+
+.container_2.active .right-side {
+  margin-left: -10px;
+}
+
+.container_2.active .burger-menu .bar {
+  background-color: rgb(185, 184, 167);
+  transform: translateX(calc(85% - 25px));
+}
+.container_2.active .burger-menu {
+  
+  
+  transform: translateX(200%);
+}
+
+@media (max-width: 768px) {
+  .container_2 {
+    flex-direction: column;
+  }
+
+  .container_2.active .left-side {
+    display: block;
+  }
+
+  .container_2.active .right-side {
+    flex-basis: 100%;
+  }
+}
+
+#container_3{
+
+  margin-top: 70px;
+ display:flex;
+ margin-bottom: 20px;
+ justify-content: flex-start;
+
+}
+
+#italicizeInput, #italicizeButton{ 
+  margin-top: 15px;
+  height: 100%;
+  border-radius: 5px;
+  border: 1px solid #5a5a5a;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px;
+  
+}
+  
+#italicizeInput{
+  margin-right: 5px;
+  height: 100%;
+}
+#italicizeButton{
+  width: 120px;
+  margin-right: 30px;
+  background-color: rgb(248, 244, 227);
+}
