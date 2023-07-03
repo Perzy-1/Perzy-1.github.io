@@ -165,31 +165,24 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   function handleTitleCase() {
-    const selection = editor.getSelection();
-    if (selection) {
-      const { index, length } = selection;
-      const content = editor.getContents();
-      const selectedText = content.ops
-        .slice(index, index + length)
-        .map((op) => op.insert)
-        .join('');
-
+    const range = editor.getSelection();
+    if (range && range.length > 0) {
+      const selectedText = editor.getText(range.index, range.length);
       convertToTitleCase(selectedText)
         .then((titleCaseText) => {
-          const formattedText = content.ops.map((op, i) => {
-            if (i >= index && i < index + length) {
-              return { insert: titleCaseText, 'title-case': true };
-            }
-            return op;
-          });
-          editor.setContents(formattedText);
+          editor.insertText(range.index, titleCaseText, { 'title-case': true });
+          editor.deleteText(range.index + titleCaseText.length, range.length);
           console.log('Text converted to title case:', titleCaseText);
         })
         .catch((error) => {
           console.error(error);
         });
+    } else {
+      console.log('No text selected.');
     }
   }
+  
+  
 
   const customButton = document.querySelector('#custom-button');
   customButton.addEventListener('click', function () {
