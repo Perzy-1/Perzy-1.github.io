@@ -170,10 +170,6 @@ canvas {
   border: 1px solid #bebdbd;
 }
 
-#toolbar {
-  
-  
-}
 
 .ql-editor {
   background-color: rgb(245, 240, 221);
@@ -334,4 +330,99 @@ canvas {
   width: 120px;
   margin-right: 30px;
   background-color: rgb(248, 244, 227);
+}
+.newButton {
+  cursor: pointer;
+  padding: 10px;
+  background-color: lightgray;
+  margin-bottom: 5px;
+}
+
+.file-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.file-item.active {
+  background-color: #5a5a5a;
+  color: white;
+}
+
+.delete-icon {
+  
+  cursor: pointer;
+}
+.file-title {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 20px;
+  font-family: Calibri, Arial, sans-serif;
+}
+.rename-icon.icon-hidden,
+.delete-icon.icon-hidden {
+  display: none;
+}
+
+
+
+  .rename-icon,
+  .delete-icon {
+    display: none;
+    
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+.file-item.active .rename-icon,
+.file-item.active .delete-icon {
+  display: block;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: block;
+}
+
+.button-container button {
+  margin-right: 10px;
+}
+
+
+#newButton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+#saveButton {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
