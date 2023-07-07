@@ -137,9 +137,6 @@ window.addEventListener('DOMContentLoaded', () => {
         'to',
         'up',
         'as',
-        'it',
-        'is',
-        'be',
       ];
 
       // Split the text into individual words
